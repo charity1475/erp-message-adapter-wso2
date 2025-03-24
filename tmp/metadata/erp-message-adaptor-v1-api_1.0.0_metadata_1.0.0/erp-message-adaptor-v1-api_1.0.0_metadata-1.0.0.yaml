@@ -1,0 +1,9 @@
+---
+key: "erp-message-adaptor-v1-api-1.0.0"
+name: "erp-message-adaptor-v1-api"
+displayName: "erp-message-adaptor-v1-api"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/erp/receipts/1.0.0"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

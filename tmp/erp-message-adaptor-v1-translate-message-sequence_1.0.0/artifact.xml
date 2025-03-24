@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><artifact name="erp-message-adaptor-v1-translate-message-sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseIntegrator">
+    <file>erp-message-adaptor-v1-translate-message-sequence-1.0.0.xml</file>
+</artifact>

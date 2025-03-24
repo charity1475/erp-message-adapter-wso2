@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="erp-message-adaptor-v1-error-template" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter defaultValue="" isMandatory="false" name="errorMessage"/>
+    <parameter defaultValue="" isMandatory="false" name="errorDescription"/>
+    <parameter defaultValue="" isMandatory="false" name="httpStatus"/>
+    <parameter defaultValue="" isMandatory="false" name="callingSequence"/>
+    <sequence>
+        <log level="full">
+            <property expression="$func:errorMessage" name="errorMessage"/>
+            <property expression="$func:errorDescription" name="errorDescription"/>
+            <property expression="$func:httpStatus" name="httpStatus"/>
+            <property expression="$func:callingSequence" name="callingSequence"/>
+        </log>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                "error": "$1",
+                "message": "$2"
+                }
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$func:errorMessage"/>
+                <arg evaluator="xml" expression="$func:errorDescription"/>
+            </args>
+        </payloadFactory>
+        <property name="Content-Type" scope="transport" type="STRING" value="application/json"/>
+        <property expression="$func:httpStatus" name="HTTP_SC" scope="axis2" type="STRING"/>
+        <respond/>
+    </sequence>
+</template>
