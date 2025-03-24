@@ -1,7 +1,0 @@
-<api xmlns="http://ws.apache.org/ns/synapse" name="erp-message-adaptor-v1-api" context="/erp/receipts" version="1.0.0" version-type="url">
-    <resource methods="POST" uri-template="/posting">
-        <inSequence>
-            <sequence key="erp-message-adaptor-v1-translate-message-sequence"/>
-        </inSequence>
-    </resource>
-</api>

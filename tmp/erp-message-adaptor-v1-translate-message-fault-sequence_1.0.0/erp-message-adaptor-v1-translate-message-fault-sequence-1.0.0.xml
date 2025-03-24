@@ -1,8 +1,0 @@
-<sequence xmlns="http://ws.apache.org/ns/synapse" name="erp-message-adaptor-v1-translate-message-fault-sequence">
-    <call-template target="erp-message-adaptor-v1-error-template">
-        <with-param name="errorMessage" value="Internal system failure"/>
-        <with-param name="errorDescription" value="{$ctx:ERROR_MESSAGE}"/>
-        <with-param name="httpStatus" value="500"/>
-        <with-param name="callingSequence" value="{$ctx:SEQ_NAME}"/>
-    </call-template>
-</sequence>
